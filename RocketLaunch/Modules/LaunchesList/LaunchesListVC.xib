@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchesListVC" customModule="RocketLaunch" customModuleProvider="target">
+            <connections>
+                <outlet property="_selectYearsSwitch" destination="PeA-5Q-dek" id="rRP-kn-I6T"/>
+                <outlet property="_showYearsLabel" destination="By6-bH-Agm" id="SPt-GZ-njH"/>
+                <outlet property="_tableView" destination="EPk-WM-gTT" id="3cX-A5-R1c"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EPk-WM-gTT">
+                    <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current selected year: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By6-bH-Agm">
+                    <rect key="frame" x="20" y="54" width="200" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="JPl-mF-u5M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="2020" translatesAutoresizingMaskIntoConstraints="NO" id="PeA-5Q-dek">
+                    <rect key="frame" x="345" y="54" width="51" height="31"/>
+                </switch>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EPk-WM-gTT" secondAttribute="trailing" id="0nL-la-V0q"/>
+                <constraint firstItem="EPk-WM-gTT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ILm-oo-0GL"/>
+                <constraint firstItem="By6-bH-Agm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LpT-Tv-NN4"/>
+                <constraint firstItem="EPk-WM-gTT" firstAttribute="top" secondItem="PeA-5Q-dek" secondAttribute="bottom" constant="10" id="NH4-BW-5n0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EPk-WM-gTT" secondAttribute="bottom" id="VHz-Yj-nrn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PeA-5Q-dek" secondAttribute="trailing" constant="20" id="c4e-hE-S2u"/>
+                <constraint firstItem="PeA-5Q-dek" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="cq2-Ge-Dhf"/>
+                <constraint firstItem="By6-bH-Agm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="hBm-bx-PNw"/>
+                <constraint firstItem="EPk-WM-gTT" firstAttribute="top" secondItem="By6-bH-Agm" secondAttribute="bottom" constant="10" id="z7U-c6-x1P"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
