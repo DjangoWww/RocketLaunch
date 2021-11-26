@@ -16,7 +16,7 @@ public struct ServerRocketDetailModelRes: ServerModelTypeRes {
     let second_stage: SecondStageModel
     let engines: EngineModel
     let landing_legs: LandingLegModel
-    let payload_weights: PayloadWeightModel
+    let payload_weights: [PayloadWeightModel]
     let flickr_images: [String]
     let name: String
     let type: TypeEnum
@@ -39,8 +39,8 @@ extension ServerRocketDetailModelRes {
         let lbf: Int
     }
     public struct DigitalModel: Codable {
-        let meters: Double
-        let feet: Double
+        let meters: Double?
+        let feet: Double?
     }
 }
 
@@ -58,7 +58,7 @@ extension ServerRocketDetailModelRes {
         let reusable: Bool
         let engines: Int
         let fuel_amount_tons: Double
-        let burn_time_sec: Int
+        let burn_time_sec: Int?
     }
 }
 
@@ -69,7 +69,7 @@ extension ServerRocketDetailModelRes {
         let reusable: Bool
         let engines: Int
         let fuel_amount_tons: Double
-        let burn_time_sec: Int
+        let burn_time_sec: Int?
 
         public struct PayloadModel: Codable {
             let composite_fairing: CompositeFairingModel
@@ -91,11 +91,11 @@ extension ServerRocketDetailModelRes {
         let number: Int
         let type: ServerRocketDetailModelRes.TypeEnum
         let version: String
-        let layout: String
-        let engine_loss_max: Int
+        let layout: String?
+        let engine_loss_max: Int?
         let propellant_1: String
         let propellant_2: String
-        let thrust_to_weight: Int
+        let thrust_to_weight: Double
 
         public struct IspModel: Codable {
             let sea_level: Int

@@ -10,7 +10,6 @@ import RxRelay
 import RxCocoa
 import RxDataSources
 import PromiseKit
-import Foundation
 
 /// LaunchesListVM
 public final class LaunchesListVM {
@@ -88,7 +87,9 @@ extension LaunchesListVM {
         _viewStateRelay.accept(.success)
     }
 
-    private func _handleFailed(with error: Error) {
+    private func _handleFailed(
+        with error: Error
+    ) {
         printDebug(error)
         _viewStateRelay.accept(.failedWith(error: error))
     }

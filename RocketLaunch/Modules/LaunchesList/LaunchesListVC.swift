@@ -73,7 +73,7 @@ extension LaunchesListVC {
         _viewModel.viewStateDriver                      // Handle viewState change
             .drive { [weak self] in self?._handleViewState($0) }
             .disposed(by: _disposeBag)
-        let dataSource = RxTableViewSectionedReloadDataSource<LaunchesListVM.TableSection>.init { dataS, tableV, indexP, model in
+        let dataSource = RxTableViewSectionedReloadDataSource<LaunchesListVM.TableSection> { dataS, tableV, indexP, model in
             guard let cell = tableV.dequeueReusableCell(
                 withIdentifier: ._launchesListTableViewCell,
                 for: indexP
@@ -118,11 +118,41 @@ extension LaunchesListVC {
 
     /// handle modelSelect
     private func _handleModelSelect(
-        with: ServerLaunchesListModelRes
+        with model: ServerLaunchesListModelRes
     ) {
-        
+        guard model.upcoming == true else {
+            let detailVc = RocketDetailVC().then {
+                $0.acceptRocket(with: model.rocket)
+            }
+            navigationController?.pushViewController(detailVc, animated: true)
+            return
+        }
+        let cancelAction = AlertActionType(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil
+        )
+        let sureAction = AlertActionType(
+            title: "Have a see",
+            style: .destructive,
+            handler: { [weak self] _ in
+                let detailVc = RocketDetailVC().then {
+                    $0.acceptRocket(with: model.rocket)
+                }
+                self?.navigationController?.pushViewController(detailVc, animated: true)
+            }
+        )
+        showAlertVcWith(
+            title: "Alert",
+            message: "This launch is upcoming, plz wait for a while",
+            preferredStyle: .alert,
+            actions: [sureAction, cancelAction]
+        )
     }
 }
+
+// MARK: - AlertAble extensions for LaunchesListVC
+extension LaunchesListVC: AlertAble { }
 
 // MARK: - String extensions for tableView cell reuse
 extension String {
