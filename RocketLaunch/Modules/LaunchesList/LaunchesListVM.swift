@@ -112,13 +112,13 @@ extension Array where Element == ServerLaunchesListModelRes {
 
 // MARK: - ServerLaunchesListModelRes filter
 extension ServerLaunchesListModelRes {
-    fileprivate static let _dateFormatter = DateFormatter().then {
+    public static let dateFormatter = DateFormatter().then {
         $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     }
     fileprivate func _filter(
         with year: LaunchesListVM.YearType          // filter within specific year
     ) -> ServerLaunchesListModelRes? {
-        guard let date = ServerLaunchesListModelRes._dateFormatter.date(from: date_local) else {
+        guard let date = ServerLaunchesListModelRes.dateFormatter.date(from: date_local) else {
             return nil                              // format a date failed
         }
         let yearToCompare: Int
