@@ -70,7 +70,7 @@ extension RocketDetailVM {
     private func _handleSucceed(
         with res: [ServerRocketDetailModelRes]
     ) {
-        _rocketDetailRelay.accept(res.first)
+        _rocketDetailRelay.accept(res.randomElement())
         _viewStateRelay.accept(.success)
     }
 

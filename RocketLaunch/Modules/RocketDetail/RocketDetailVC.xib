@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RocketDetailVC" customModule="RocketLaunch" customModuleProvider="target">
             <connections>
+                <outlet property="_currentIdLabel" destination="rYu-Du-C29" id="Fpb-65-eL4"/>
                 <outlet property="_descriptionLabel" destination="gql-RJ-0HK" id="a3G-X7-S1a"/>
                 <outlet property="_imageV" destination="HQH-eI-qBn" id="eu7-JX-1Fd"/>
                 <outlet property="_nameLabel" destination="s0S-dV-BFA" id="CdV-ce-Hqa"/>
@@ -95,6 +96,15 @@
                         <constraint firstAttribute="height" constant="300" id="pk7-OU-4Zn"/>
                     </constraints>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CurrentRocktID: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYu-Du-C29">
+                    <rect key="frame" x="20" y="574" width="374" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="iNk-ZZ-Lnd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,7 +112,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tcD-jZ-33s" secondAttribute="trailing" constant="20" id="1yW-5Q-uhh"/>
                 <constraint firstItem="tcD-jZ-33s" firstAttribute="top" secondItem="HQH-eI-qBn" secondAttribute="bottom" constant="20" id="27o-Fl-9fR"/>
                 <constraint firstItem="HQH-eI-qBn" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2rd-bH-xH3"/>
+                <constraint firstItem="rYu-Du-C29" firstAttribute="top" secondItem="tcD-jZ-33s" secondAttribute="bottom" constant="50" id="9yn-Op-577"/>
                 <constraint firstItem="fV3-l0-cTD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="TJn-Ss-W3N"/>
+                <constraint firstItem="rYu-Du-C29" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eFu-XS-6d5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rYu-Du-C29" secondAttribute="trailing" constant="20" id="eae-bv-FmC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fV3-l0-cTD" secondAttribute="trailing" constant="10" id="oxj-Be-9jC"/>
                 <constraint firstItem="tcD-jZ-33s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ruJ-tX-Sla"/>
                 <constraint firstItem="HQH-eI-qBn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="tdf-9u-Gt6"/>

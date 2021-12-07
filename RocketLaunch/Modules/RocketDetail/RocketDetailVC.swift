@@ -24,6 +24,7 @@ public final class RocketDetailVC: UIViewController {
     @IBOutlet private weak var _nameLabel: UILabel!
     @IBOutlet private weak var _descriptionLabel: UILabel!
     @IBOutlet private weak var _wikiTextView: UITextView!
+    @IBOutlet private weak var _currentIdLabel: UILabel!
 
     private let _viewModel = RocketDetailVM()
     private let _disposeBag = DisposeBag()
@@ -64,6 +65,7 @@ extension RocketDetailVC {
                 self?._viewModel.acceptRocket(with: id)
             }
             .disposed(by: _disposeBag)
+        _currentIdLabel.text = _rocketID.map { "CurrentRocktID: " + $0 }
     }
 
     private func _bindViewModel() {
@@ -71,7 +73,7 @@ extension RocketDetailVC {
             .drive { [weak self] in self?._handleViewState($0) }
             .disposed(by: _disposeBag)
         _viewModel.rocketDetailDriver
-            .map { $0.flickr_images.first }         // just choose the first image
+            .map { $0.flickr_images.randomElement() }       // choose the random image
             .drive(_imageV.rx._kfUrlString())
             .disposed(by: _disposeBag)
         _viewModel.rocketDetailDriver
